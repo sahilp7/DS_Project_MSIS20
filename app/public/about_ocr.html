@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<html>
+    <title>D&S Project</title>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 5px;
+}
+.row {margin: 0 -5px;}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #444;
+  color: white;
+}
+.fa {font-size:50px;}
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  background-color: #800000;
+  color: white;
+}
+.topnav a.active {
+  background-color: #800000;
+  color: white;
+}
+img{
+        width: 100%;
+        }
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+.open-button {
+  background-color: #CD5C5C;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+  }
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+.form-container .cancel {
+  background-color: red;
+}
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+div.sticky {
+  position: -webkit-sticky;
+  position: left;
+  }
+.title {
+  color: grey;
+}
+</style>
+</head>
+
+<body>
+<center>
+<h1> About Us</h1>
+</center>
+<center>
+<div class="topnav">
+  <a href="homepage.html">Home</a>
+  <a class="active" href="about_ocr.html">About OCFR</a>
+  <a href="dashboard.html">Oconee County Fire Rescue Dashboard</a>
+  <a href="visit.html">Book New Visit</a>
+  <a href="members.php">View Members</a>
+  <a href="certification.html">Certifications</a>
+  <a href="report.html">Report</a>
+
+</div>
+</center>
+<br>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <i class="fa fa-fire-extinguisher" aria-hidden="true"></i>
+      <h3>5+</h3>
+      <p>Fire Stations</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <i class="fa fa-truck" aria-hidden="true"></i>
+      <h3>55+</h3>
+      <p>Responding to Emergencies</p>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <i class="fa fa-users" aria-hidden="true"></i>
+      <h3>100+</h3>
+      <p>Dedicated Firefighters</p>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <i class="fa fa-free-code-camp" aria-hidden="true"></i>
+      <h3>200+</h3>
+      <p>Promoting Fire Safety</p>
+    </div>
+  </div>
+</div>
+
+<section>
+<img src="fire_rescue.jpg" alt="logo">
+</section>
+<button class="open-button" onclick="openForm()"><i class = "fa fa-commenting-o"></i></button>
+<div class="sticky">
+<br>
+<h1 style="text-align:center">Meet The Team</h1>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="chinu.jpg" alt="Chinu" style="width:100%">
+      <div class="container">
+        <h2>Chinu Gerelt-Od</h2>
+        <p class="title">Data Analyst</p>
+        <p>cgerelto@iu.edu</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="john.jpg" alt="John" style="width:100%">
+      <div class="container">
+        <h2>John Krieger</h2>
+        <p class="title">Data Analyst</p>
+        <p>aarowall@iu.edu</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="zara.jpg" alt="Zara" style="width:100%">
+      <div class="container">
+        <h2>Zara Lakehal-Ayat</h2>
+        <p class="title">Developer</p>
+        <p>zlakehal@iu.edu</p>
+      </div>
+    </div>
+  </div>
+    <div class="column">
+    <div class="card">
+      <img src="sahil.jpg" alt="Zara" style="width:100%">
+      <div class="container">
+        <h2>Sahil Patel</h2>
+        <p class="title">Developer</p>
+        <p>sap7@iu.edu</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5e9b5fb635bcbb0c9ab282d2/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</html>
