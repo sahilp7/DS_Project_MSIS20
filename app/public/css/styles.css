@@ -1,67 +1,163 @@
-html,
+* {
+  box-sizing: border-box;
+}
+
 body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 5px;
+}
+
+.row {
+  margin: 0 -5px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #444;
+  color: white;
+}
+
+.fa {
+  font-size: 50px;
+}
+
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #800000;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: #800000;
+  color: white;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.open-button {
+  background-color: #CD5C5C;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+.form-container {
+  max-width: 300px;
+  padding: 10px;
   background-color: white;
-  color: #333;
 }
 
-nav,
-.navbar {
-  background-color: rgb(189,48,34);
-  color: #eee;
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
 }
 
-.navbar a.navbar-brand,
-.navbar a.nav-link,
-.navbar a.nav-link:visited {
-  color: #eee;
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
 }
 
-.navbar a.nav-link:hover {
-  background-color: rgb(50,80,220);
-  color: #fff;
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
 }
 
-
-.cardPane {
-  background-color: #eee;
-  color: black;
+.form-container .cancel {
+  background-color: red;
 }
 
-.cardPaneLeft{
-  border-right: 1px solid rgb(77,55,41);
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
 }
 
-.cardPaneRight{
-  border-left: 1px solid rgb(77,55,41);
+div.sticky {
+  position: -webkit-sticky;
+  position: left;
 }
 
-.patientCard {
-  margin: 4px;
-  padding: 4px 8px;
-  border: 1px solid #999;
-  border-radius: 5px;
-  background-color: white;
-}
-.patientCard .birthDate{
-  float: right;
-}
-
-.patientCard .lastName {
-  font-weight:bold;
-}
-
-.triageCritical {
-  border: 5px solid #C00;
-  background-color: #fee;
-  margin: 8px 4px;
-}
-
-.triageUrgent {
-  border: 3px solid rgb(209,140,76);
-  margin: 8px 4px;
-}
-
-.triageMinor {
-  border: 3px solid rgb(50,80,220);
-  margin: 8px 4px;
+.title {
+  color: grey;
 }
