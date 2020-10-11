@@ -1,5 +1,4 @@
-
-MYSQL_DATABASE=sahil
-MYSQL_HOST=sap7-hw.chcnyk0kvn1l.us-east-1.rds.amazonaws.com
-MYSQL_USER=sap7admin
-MYSQL_PASSWORD=
+MYSQL_DATABASE=ocfr
+MYSQL_HOST=oconeedb.cpaezqrbcv2k.us-east-1.rds.amazonaws.com
+MYSQL_USER=oconeeadmin
+MYSQL_PASSWORD=firetruck
