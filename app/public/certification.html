@@ -23,90 +23,20 @@
     </div>
   </center>
   <br>
-  <div class="row">
-    <div class="column">
-      <div class="card">
-        <i class="fa fa-fire-extinguisher" aria-hidden="true"></i>
-        <h3>5+</h3>
-        <p>Fire Stations</p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card">
-        <i class="fa fa-truck" aria-hidden="true"></i>
-        <h3>55+</h3>
-        <p>Responding to Emergencies</p>
-      </div>
-    </div>
 
-    <div class="column">
-      <div class="card">
-        <i class="fa fa-users" aria-hidden="true"></i>
-        <h3>100+</h3>
-        <p>Dedicated Firefighters</p>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <i class="fa fa-free-code-camp" aria-hidden="true"></i>
-        <h3>200+</h3>
-        <p>Promoting Fire Safety</p>
-      </div>
-    </div>
+  <div>
+    <h1>Certification</h1>
+    <ul id="certInsert">
+      <li v-for="item in CertList" :key="item.certification_id">
+        {{item.certification_name}} - {{item.agency}} - {{item.standard_expiry}}
+      </li>
+    </ul>
   </div>
 
-  <section>
-    <img src="images\fire_rescue.jpg" alt="logo">
-  </section>
-  <button class="open-button" onclick="openForm()"><i class="fa fa-commenting-o"></i></button>
-  <div class="sticky">
-    <br>
-    <h1 style="text-align:center">Meet The Team</h1>
-    <div class="row">
-      <div class="column">
-        <div class="card">
-          <img src="images\chinu.jpg" alt="Chinu" style="width:100%">
-          <div class="container">
-            <h2>Chinu Gerelt-Od</h2>
-            <p class="title">Data Analyst</p>
-            <p>cgerelto@iu.edu</p>
-          </div>
-        </div>
-      </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/cert.app.js"></script>
 
-      <div class="column">
-        <div class="card">
-          <img src="images\john.jpg" alt="John" style="width:100%">
-          <div class="container">
-            <h2>John Krieger</h2>
-            <p class="title">Data Analyst</p>
-            <p>aarowall@iu.edu</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="column">
-        <div class="card">
-          <img src="images\zara.jpg" alt="Zara" style="width:100%">
-          <div class="container">
-            <h2>Zara Lakehal-Ayat</h2>
-            <p class="title">Developer</p>
-            <p>zlakehal@iu.edu</p>
-          </div>
-        </div>
-      </div>
-      <div class="column">
-        <div class="card">
-          <img src="images\sahil.jpg" alt="Zara" style="width:100%">
-          <div class="container">
-            <h2>Sahil Patel</h2>
-            <p class="title">Developer</p>
-            <p>sap7@iu.edu</p>
-          </div>
-        </div>
-      </div>
-    </div>
 </body>
 
 </html>
