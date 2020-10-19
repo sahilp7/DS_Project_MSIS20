@@ -1,121 +1,126 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <!-- my custom CSS goes here -->
-    <link rel="stylesheet" href="css/styles.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
 
-  </head>
-  <body>
-    <center>
-      <h1> Welcome Our Webpage!</h1>
-    </center>
-    <center>
-      <div class="topnav">
-        <a href="homepage.html">Home</a>
-        <a href="about_ocr.html">About OCFR</a>
-        <a class="active" href="members.html">View Members</a>
-        <a href="certification.html">Certifications</a>
-        <a href="report.html">Report</a>
-      </div>
-    </center>
 
-    <br>
-    <div class="container-fluid">
-      <div class="row" id="certifPage">
-        <div id="cardPaneLeft" class="col cardPane cardPaneLeft">
-          <form method="post" v-on:submit.prevent="handleNewCertForm">
-            <h3>Create New Certification Record</h3>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>  
+</head>
 
-            <div class="form-group">
-            <label for="certName">Certification Name</label>
-            <input type="text" v-model="newCertForm.certName" class="form-control" placeholder="Jane">
-          </div>
-          <div class="form-group">
-            <label for="agency">Certification Agency</label>
-            <input type="text" v-model="newCertForm.agency" class="form-control" placeholder="Doe">
-          </div>
-          <div class="form-group">
-            <label for="standExpiry">Standard Expiry</label>
-            <select class="form-control" v-model="newCertForm.standExpiry">
-              <option value="M">Male</option>
-              <option value="F">Female</option>
-              <option value="O">Other/Unknown</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary">Create</button>
-          </form>
-
-          <br>
-          <form method="post" v-on:submit.prevent="handleNewCertForm">
-            <h3>Create New Member</h3>
-
-            <div class="form-group">
-            <label for="certName">Member First Name</label>
-            <input type="text" v-model="newCertForm.certName" class="form-control" placeholder="Jane">
-          </div>
-          <div class="form-group">
-            <label for="agency">Member Last Name</label>
-            <input type="text" v-model="newCertForm.agency" class="form-control" placeholder="Doe">
-          </div>
-          <div class="form-group">
-            <label for="standExpiry">Date of Birth</label>
-            <select class="form-control" v-model="newCertForm.standExpiry">
-              <option value="M">Male</option>
-              <option value="F">Female</option>
-              <option value="O">Other/Unknown</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary">Create</button>
-        </form>
-
-          <!-- <button v-on:click="yell()">Click Me!</button> -->
-        </div>
-
-        <br>
-        <div class="col-6">
-          <h1>Member List</h1>
-            <ul id="members">
-              <li v-for="item in MembList" :key="item.member_id">
-                {{item.first_name}} - {{item.last_name}}
-              </li>
-            </ul>
-        </div>
-
-        <br>
-        <div class="col cardPane cardPaneRight">
-          <h3>Waiting patients</h3>
-          <div class="patientCard triageCritical" data-patient_id="3" data-visit_id="520">
-            <span class="lastName">Gregory</span>, <span clas="firstName">Tom</span>
-            <span class="birthDate text-right">1978</span>
-          </div>
-          <div class="patientCard triageUrgent" data-patient_id="1" data-visit_id="501">
-            <span class="lastName">Dayton</span>, <span clas="firstName">Keith</span>
-            <span class="birthDate float-right">1980</span>
-          </div>
-          <div class="patientCard triageMinor" data-patient_id="3" data-visit_id="520">
-            <span class="lastName">Prabhakar</span>, <span clas="firstName">Bipin</span>
-            <span class="birthDate text-right">1981</span>
-          </div>
-        </div>
-      </div>
+<body>
+  <center>
+    <h1> Welcome Our Webpage!</h1>
+  </center>
+  <center>
+    <div class="topnav">
+      <a href="homepage.html">Home</a>
+      <a href="about_ocr.html">About OCFR</a>
+      <a class="active" href="members.html">View Members</a>
+      <a href="certification.html">Certifications</a>
+      <a href="report.html">Report</a>
     </div>
-    <!-- END content -->
+  </center>
 
-    <!-- Footer? Insert here -->
+  <br>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <div id="members">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Member ID<i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">First Name<i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">Last Name<i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">Is Active?<i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">Gender<i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">Date of Birth<i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">Mobile Number<i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">Work Number<i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">Street Address<i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">City<i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">State<i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">Zip Code<i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">Email Address<i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">Station<i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">Chief?<i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">Position<i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">Radio<i class="fa fa-fw fa-sort"></i></th>
+        </tr>
+      </thead>
+      <tbody id="memberTableBody">
+        <tr v-for="member in MembList">
+          <td>{{ member.member_id }}</td>
+          <td>{{ member.first_name }}</td>
+          <td>{{ member.last_name }}</td>
+          <td>{{ member.is_active }}</td>
+          <td>{{ member.gender }}</td>
+          <td>{{ member.date_of_birth }}</td>
+          <td>{{ member.mobile_number }}</td>
+          <td>{{ member.work_number }}</td>
+          <td>{{ member.street_address }}</td>
+          <td>{{ member.city }}</td>
+          <td>{{ member.state }}</td>
+          <td>{{ member.zip_code }}</td>
+          <td>{{ member.email_address }}</td>
+          <td>{{ member.station }}</td>
+          <td>{{ member.chief }}</td>
+          <td>{{ member.position_title }}</td>
+          <td>{{ member.radio }}</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/member.app.js"></script>
-  </body>
+    <form v-on:submit.prevent="createMember">
+      <div class="members">
+        <label for="memberFName">First Name:</label>
+        <input type="text" v-model="newMember.first_name" class="form-control" id="memberFName">
+        <label for="memberLName">Last Name:</label>
+        <input type="text" v-model="newMember.last_name" class="form-control" id="memberLName">
+        <label for="isActive">Active Member?:</label>
+        <input type="text" v-model="newMember.is_active" class="form-control" id="isActive">
+        <label for="gender">Gender:</label>
+        <input type="text" v-model="newMember.gender" class="form-control" id="gender">
+        <label for="DoB">Date of Birth:</label>
+        <input type="text" v-model="newMember.date_of_birth" class="form-control" id="DoB">
+        <label for="mobile_number">Mobile Number:</label>
+        <input type="text" v-model="newMember.mobile_number" class="form-control" id="mobile_number">
+        <label for="work_number">Work Number:</label>
+        <input type="text" v-model="newMember.work_number" class="form-control" id="work_number">
+        <label for="street_address">Address 1:</label>
+        <input type="text" v-model="newMember.street_address" class="form-control" id="street_address">
+        <label for="city">City:</label>
+        <input type="text" v-model="newMember.city" class="form-control" id="city">
+        <label for="state">State:</label>
+        <input type="text" v-model="newMember.state" class="form-control" id="state">
+        <label for="zipCode">Zip Code:</label>
+        <input type="text" v-model="newMember.zip_code" class="form-control" id="zipCode">
+        <label for="email_address">Email:</label>
+        <input type="text" v-model="newMember.email_address" class="form-control" id="email_address">
+        <label for="station">Station:</label>
+        <input type="text" v-model="newMember.station" class="form-control" id="station">
+        <label for="chief">Chief?:</label>
+        <input type="text" v-model="newMember.chief" class="form-control" id="chief">
+        <label for="positionTitle">Position Title:</label>
+        <input type="text" v-model="newMember.position_title" class="form-control" id="positionTitle">
+        <label for="radio">Radio:</label>
+        <input type="text" v-model="newMember.radio" class="form-control" id="radio">
+      </div>
+
+      <div></br>
+        <input type="submit" value="Create Member" class="button">
+      </div>
+    </form>
+
+  </div>
+
+
+  <script src="js/member.app.js"></script>
+</body>
+
 </html>
