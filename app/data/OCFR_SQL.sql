@@ -4,7 +4,7 @@ USE ocfr;
 
 CREATE TABLE members
 (
-member_id INT PRIMARY KEY,
+member_id INT PRIMARY KEY AUTO_INCREMENT,
 first_name VARCHAR(20) NOT NULL,
 last_name VARCHAR(20) NOT NULL,
 is_active VARCHAR(5) NOT NULL,
@@ -25,7 +25,7 @@ radio VARCHAR(10) NOT NULL
 
 CREATE TABLE certifications
 (
-certification_id INT PRIMARY KEY,
+certification_id INT PRIMARY KEY AUTO_INCREMENT,
 certification_name VARCHAR(64) NOT NULL,
 agency VARCHAR(64) NOT NULL,
 standard_expiry INT
