@@ -59,7 +59,7 @@ membersApp = new Vue ({
         })
         .then(response => response.json())
         .then(json => {
-          console.log("Returned from post:", json);
+          console.log("Returned from post:" + json);
           this.MembList.push(json[0]);
           this.newMember = this.newMemberData();
         });

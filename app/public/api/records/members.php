@@ -9,6 +9,12 @@ $db = DbConnection::getConnection();
 $sql = 'SELECT * FROM members';
 $vars = [];
 
+if (isset($_GET['member_id'])) {
+  // This is an example of a parameterized query
+  $sql = 'SELECT * FROM members WHERE member_id = ?';
+  $vars = [ $_GET['member_id'] ];
+}
+
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);
 

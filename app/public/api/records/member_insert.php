@@ -19,7 +19,7 @@ $stmt->execute([
  $_POST['date_of_birth'],
  $_POST['mobile_number'],
  $_POST['work_number'],
- $_POST['street_number'],
+ $_POST['street_address'],
  $_POST['city'],
  $_POST['state'],
  $_POST['zip_code'],
@@ -33,4 +33,4 @@ $stmt->execute([
 $pk = $db->lastInsertId();
 
 header('HTTP/1.1 303 See Other');
-header('Location: ../records/member_insert.php/?member_id='.$pk);
+header('Location: ../records/members.php/?member_id='.$pk);
