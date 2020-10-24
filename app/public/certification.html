@@ -24,43 +24,45 @@
   </center>
   <br>
 
-  <div>
-    <h1>Certification</h1>
-    <ul id="certInsert">
-      <li v-for="item in CertList" :key="item.certification_id">
-        {{item.certification_name}} - {{item.agency}} - {{item.standard_expiry}}
-      </li>
-    </ul>
-  </div>
+  <h1>Certification</h1>
+  <div id=certifs>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Certification ID</th>
+          <th scope="col">Certification Name</th>
+          <th scope="col">Agency</th>
+          <th scope="col">Standard Expiry</th>
+        </tr>
+      </thead>
+      <tbody id="certifTableBody">
+        <tr v-for="cert in CertList">
+          <td>{{ cert.certification_id }}</td>
+          <td>{{ cert.certification_name }}</td>
+          <td>{{ cert.agency }}</td>
+          <td>{{ cert.standard_expiry }}</td>
+        </tr>
+      </tbody>
+    </table>
 
-  <div>
-    <form method="post" v-on:submit.prevent="handleNewCertForm">
-      <h3>Create New Certification Record</h3>
+    <form v-on:submit.prevent="createCert">
+      <div>
+        <label for="certName">Certification Name:</label>
+        <input type="text" v-model="newCert.certification_name" class="form-control" id="certName">
+        <label for="agency">Agency:</label>
+        <input type="text" v-model="newCert.agency" class="form-control" id="agency">
+        <label for="std">Standard Expiry:</label>
+        <input type="text" v-model="newCert.standard_expiry" class="form-control" id="std">
+      </div>
 
-    <div class="form-group">
-      <label for="certName">Certification Name</label>
-      <input type="text" v-model="newCertForm.certName" class="form-control" placeholder="Jane">
-    </div>
-    <div class="form-group">
-      <label for="agency">Certification Agency</label>
-      <input type="text" v-model="newCertForm.agency" class="form-control" placeholder="Doe">
-    </div>
-    <div class="form-group">
-      <label for="standExpiry">Standard Expiry</label>
-      <select class="form-control" v-model="newCertForm.standExpiry">
-        <option value="M">Male</option>
-        <option value="F">Female</option>
-        <option value="O">Other/Unknown</option>
-      </select>
-    </div>
-    <button type="submit" class="btn btn-primary">Create</button>
+      <div></br>
+        <input type="submit" value="Create Certification" class="button">
+      </div>
     </form>
-  </div>
 
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="js/cert.app.js"></script>
+  <script src="js/certification.app.js"></script>
 
 </body>
-
 </html>
