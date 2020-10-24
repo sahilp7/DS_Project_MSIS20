@@ -39,7 +39,7 @@ membersApp = new Vue ({
       position_title: '',
       radio: ''
     },
-    memberId:{}
+    memberId:{},
   },
   methods: {
     fetchMember(){
@@ -67,18 +67,16 @@ membersApp = new Vue ({
       console.log("Creating (POSTing)...!");
       console.log(this.newMember);
     },
-    // deleteData:function(id){
-    //    if(confirm("Are you sure you want to remove this data?"))
-    //    {
-    //     axios.post('member_delete.php', {
-    //      action:'delete',
-    //      id:id
-    //     }).then(function(response){
-    //      application.fetchAllData();
-    //      alert(response.data.message);
-    //     });
-    //    }
-    //  },
+    editMember(evt){
+      fetch('api/records/member_edit.php', {
+          method: 'POST',
+          body: JSON.stringify(this.updatedmember),
+          headers: {
+            "Content-Type": "application/json; charset=utf-8"
+          }
+        })
+    },
+
     deleteMember(evt){
       console.log(this.memberID)
       fetch('api/records/member_delete.php', {
