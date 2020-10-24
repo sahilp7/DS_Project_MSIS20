@@ -38,7 +38,8 @@ membersApp = new Vue ({
       chief: '',
       position_title: '',
       radio: ''
-    }
+    },
+    memberId:{}
   },
   methods: {
     fetchMember(){
@@ -65,6 +66,36 @@ membersApp = new Vue ({
         });
       console.log("Creating (POSTing)...!");
       console.log(this.newMember);
+    },
+    // deleteData:function(id){
+    //    if(confirm("Are you sure you want to remove this data?"))
+    //    {
+    //     axios.post('member_delete.php', {
+    //      action:'delete',
+    //      id:id
+    //     }).then(function(response){
+    //      application.fetchAllData();
+    //      alert(response.data.message);
+    //     });
+    //    }
+    //  },
+    deleteMember(evt){
+      console.log(this.memberID)
+      fetch('api/records/member_delete.php', {
+          method: 'POST',
+          body: JSON.stringify(this.memberId),
+          headers: {
+            "Content-Type": "application/json; charset=utf-8"
+          }
+        })
+        // .then(response => response.json())
+        // .then(json => {
+        //   console.log("Returned from delete:" + json);
+        //   this.MembList.push(json[0]);
+        //   this.newMember = this.newMemberData();
+        // });
+      console.log("Creating (POSTing)...!");
+      console.log(this.memberId);
     },
     newMemberData() {
       return {
