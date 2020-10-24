@@ -12,6 +12,7 @@ $stmt = $db->prepare(
 );
 
 $stmt->execute([
+ $_POST['member_id'],
  $_POST['first_name'],
  $_POST['last_name'],
  $_POST['is_active'],
@@ -27,8 +28,8 @@ $stmt->execute([
  $_POST['station'],
  $_POST['chief'],
  $_POST['position_title'],
- $_POST['radio'],
- $_POST['member_id']
+ $_POST['radio']
+
  ]);
 
 $member_id = $_POST['member_id'];

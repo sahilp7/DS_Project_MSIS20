@@ -88,12 +88,7 @@ membersApp = new Vue ({
             "Content-Type": "application/json; charset=utf-8"
           }
         })
-        // .then(response => response.json())
-        // .then(json => {
-        //   console.log("Returned from delete:" + json);
-        //   this.MembList.push(json[0]);
-        //   this.newMember = this.newMemberData();
-        // });
+
       console.log("Creating (POSTing)...!");
       console.log(this.memberId);
     },
