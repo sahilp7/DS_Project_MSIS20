@@ -67,18 +67,18 @@ membersApp = new Vue ({
       console.log("Creating (POSTing)...!");
       console.log(this.newMember);
     },
-    editMember(evt){
-      fetch('api/records/member_edit.php', {
-          method: 'POST',
-          body: JSON.stringify(this.updatedmember),
-          headers: {
-            "Content-Type": "application/json; charset=utf-8"
-          }
-        })
-    },
+    // editMember(evt){
+    //   fetch('api/records/member_edit.php', {
+    //       method: 'POST',
+    //       body: JSON.stringify(this.updatedmember),
+    //       headers: {
+    //         "Content-Type": "application/json; charset=utf-8"
+    //       }
+    //     })
+    // },
 
     deleteMember(evt){
-      console.log(this.memberID)
+      console.log(this.memberId)
       fetch('api/records/member_delete.php', {
           method: 'POST',
           body: JSON.stringify(this.memberId),
