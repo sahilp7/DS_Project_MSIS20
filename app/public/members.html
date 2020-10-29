@@ -138,7 +138,7 @@
   <form>
       <h2> Edit Member Records </h2>
 
-  <div class = "members">
+  <div class = "row">
     <label for="member_id">Member Id</label>
     <input type="text" class="form-control" id="editmember_id" v-model="Updatedmember.member_id" >
     </div>
@@ -180,7 +180,7 @@
 
       <div></br>
         <!-- <input type="submit" value="Edit Member" class="button"> -->
-        <button v-on:click.prevent ="editMember" type="submit">Edit Member</button>
+        <button v-on:click.prevent ="editMember" type="submit" >Edit Member</button>
       </div>
 
     </form>

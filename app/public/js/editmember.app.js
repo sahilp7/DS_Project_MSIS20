@@ -1,7 +1,7 @@
 editmembersapp = new Vue ({
   el: '#editmembersapp',
   data: {
-    Updatedmember: [],
+    Updatedmember: []
   },
   methods: {
     editMember(evt){
@@ -15,7 +15,7 @@ editmembersapp = new Vue ({
     },
 
     editMemberData() {
-      this.editmember={
+      this.Updatedmember={
         member_id: '',
         first_name: '',
         last_name: '',
