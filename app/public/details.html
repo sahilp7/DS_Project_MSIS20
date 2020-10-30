@@ -32,7 +32,7 @@
 
   <h2>Member View</h2>
   <div id="detailView" class="container">
-    <div v-for="(member,index) in groupedMembers">
+    <div v-for="(member,date_g,index) in groupedMembers">
       <h3>{{index}}</h3>
       <table class="table table-bordered table-striped">
         <thead>
@@ -45,6 +45,9 @@
         <tbody>
           <tr v-for="cert in member">
             <td>{{ cert }}</td>
+          </tr>
+          <tr v-for="date in date_g">
+            <td>{{ date }}</td>
           </tr>
         </tbody>
       </table>
