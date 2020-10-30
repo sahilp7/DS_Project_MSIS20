@@ -1,34 +1,48 @@
-<?php
+<!doctype html>
+<html lang="en">
 
-require 'common.php';
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 
-// Step 1: Get a datase connection from our helper class
-$db = DbConnection::getConnection();
+<body>
+  <center>
+    <h1> Welcome Our Webpage!</h1>
+  </center>
+  <center>
+    <div class="topnav">
+      <a href="homepage.html">Home</a>
+      <a href="about_ocr.html">About OCFR</a>
+      <a class="active" href="members.html">View Members</a>
+      <a href="certification.html">Certifications</a>
+      <a href="report.html">Report</a>
+    </div>
+  </center><br>
 
-// Step 2: Create & run the query
-$sql = "SELECT member_id, first_name, last_name
-FROM members";
+  <div id="detailView" class="container">
+    <div v-for="(member,index) in groupedMembers">
+      <h3>{{index}}</h3>
+      <ul>
+        <li v-for="cert in member">
+          {{cert}}
+        </li>
+      </ul>
+    </div>
+  </div>
 
-$vars = [];
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/details.app.js"></script>
+</body>
 
-if (isset($_GET['member_id'])) {
-  // This is an example of a parameterized query
-  $sql = 'SELECT members.member_id, certification_name, date_granted, date_expired
-  FROM members, member_certification, certifications
-  WHERE members.member_id = member_certification.member_id AND member_certification.certification_id = certifications.certification_id
-  AND members.member_id = ?';
-  $vars = [ $_GET['member_id'] ];
-  }
-
-$stmt = $db->prepare($sql);
-$stmt->execute($vars);
-
-$members = $stmt->fetchAll();
-
-// Step 3: Convert to JSON
-$memb = json_encode($members, JSON_PRETTY_PRINT);
-
-// Step 4: Output
-header('Content-Type: application/json');
-echo $memb;
-S
+</html>

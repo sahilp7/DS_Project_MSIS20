@@ -1,26 +1,20 @@
 expCertifApp = new Vue ({
   el: '#exp_certifs',
   data: {
-    CertList: [{
+    ExpList: [{
       first_name: '',
+      last_name: '',
       certification_name: '',
-      agency: '',
-      standard_expiry: ''
-    }],
-    newCert: {
-      certification_id: '',
-      certification_name: '',
-      agency: '',
-      standard_expiry: ''
-    }
+      date_expired: ''
+    }]
   },
   methods: {
     fetchCert(){
-      fetch('api/records/certifications.php')
+      fetch('api/records/exp_cert_report.php')
         .then(response => response.json())
         .then(json => {
-          this.CertList = json;
-          console.log(this.CertList);
+          this.ExpList = json;
+          console.log(this.ExpList);
         });
     },
   },

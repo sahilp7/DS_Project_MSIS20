@@ -6,8 +6,9 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = "SELECT member_id, first_name, last_name
-FROM members";
+$sql = "SELECT CONCAT(members.first_name,' ', members.last_name) as 'Member_Name', certification_name, date_granted, date_expired
+FROM members, member_certification, certifications
+WHERE members.member_id = member_certification.member_id AND member_certification.certification_id = certifications.certification_id";
 
 $vars = [];
 

@@ -6,17 +6,16 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT * FROM certifications';
-$vars = [];
+$stmt = $db->prepare(
+'SELECT DISTINCT(certification_name), certification_id FROM certifications');
 
-$stmt = $db->prepare($sql);
-$stmt->execute($vars);
+$stmt->execute();
 
-$certs = $stmt->fetchAll();
+$members = $stmt->fetchAll();
 
 // Step 3: Convert to JSON
-$cert = json_encode($certs, JSON_PRETTY_PRINT);
+$memb = json_encode($members, JSON_PRETTY_PRINT);
 
 // Step 4: Output
 header('Content-Type: application/json');
-echo $cert;
+echo $memb;

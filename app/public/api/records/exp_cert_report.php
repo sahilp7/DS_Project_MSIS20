@@ -6,9 +6,12 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT first_name, last_name, certification_id, date_expired
-FROM members, member_certification
-WHERE members.member_id = member_certification.member_id AND date_expired <= '2020-10-28'';
+$sql = "SELECT first_name, last_name, certification_name, date_expired
+FROM members, member_certification, certifications
+WHERE members.member_id = member_certification.member_id
+AND member_certification.certification_id = certifications.certification_id
+AND date_expired <= CURDATE()
+ORDER BY first_name";
 
 $vars = [];
 

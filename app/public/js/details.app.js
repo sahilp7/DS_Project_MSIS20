@@ -18,7 +18,21 @@ detailsApp = new Vue({
           this.MemDet = json;
           console.log(this.MemDet);
         });
-    },
+    }
+  },
+  computed: {
+    groupedMembers() {
+      var members = {};
+      this.MemDet.forEach((item) => {
+        if (members[item.Member_Name] == undefined) {
+          members[item.Member_Name] = [];
+          members[item.Member_Name].push(item.certification_name)
+        } else {
+          members[item.Member_Name].push(item.certification_name);
+        }
+      });
+      return members;
+    }
   },
   created() {
     this.fetchMemDet();
