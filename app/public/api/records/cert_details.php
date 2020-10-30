@@ -15,10 +15,10 @@ $vars = [];
 
 if (isset($_GET['member_id'])) {
   // This is an example of a parameterized query
-  $sql = 'SELECT certification_name, CONCAT(members.first_name,' ', members.last_name) as 'Member_Name', date_granted, date_expired
-FROM members, member_certification, certifications
-WHERE members.member_id = member_certification.member_id AND member_certification.certification_id = certifications.certification_id
-ORDER BY certification_name';
+  $sql = "SELECT certification_name, CONCAT(members.first_name,' ', members.last_name) as 'Member_Name', date_granted, date_expired
+  FROM members, member_certification, certifications
+  WHERE members.member_id = member_certification.member_id AND member_certification.certification_id = certifications.certification_id
+  ORDER BY certification_name";
   $vars = [ $_GET['member_id'] ];
   }
 
