@@ -11,9 +11,9 @@ certifApp = new Vue ({
       certification_id: '',
       certification_name: '',
       agency: '',
-      standard_expiry: '',
-      activeEdit: null
-    }
+      standard_expiry: ''
+    },
+    certId:{}
   },
   methods: {
     fetchCert(){
@@ -40,6 +40,20 @@ certifApp = new Vue ({
         });
       console.log("Creating (POSTing)...!");
       console.log(this.newCert);
+    },
+
+    deleteCert(evt){
+      console.log(this.certId)
+      fetch('api/records/cert_delete.php', {
+          method: 'POST',
+          body: JSON.stringify(this.certId),
+          headers: {
+            "Content-Type": "application/json; charset=utf-8"
+          }
+        })
+
+      console.log("Creating (POSTing)...!");
+      console.log(this.memberId);
     },
     newCertData() {
       return {
