@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<title>D&S Project</title>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css\styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <center>
+    <h1> Welcome Our Webpage!</h1>
+  </center>
+  <center>
+    <div class="topnav">
+      <a href="homepage.html">Home</a>
+      <a href="about_ocr.html">About OCFR</a>
+      <a href="members.html">View Members</a>
+      <a class="active" href="certification.html">Certifications</a>
+      <a href="report.html">Report</a>
+    </div>
+  </center>
+  <br>
+
+  <h1>Certification</h1>
+
+  <div id="assigncertapp" class="container">
+    <form>
+    <h1> Assign Certificate to Members</h1>
+    <hr>
+    <br>
+  <div class="col-sm-6">
+    <div class="form-group">
+       <label for="certification">Select Certification:</label>
+       <select v-model = "table.certification_id" class="form-control">
+         <option></option>
+         <option v-for="c in certifications" v-bind:value = "c.certification_id" >{{c.certification_id}}</option>
+       </select>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="form-group">
+       <label for="member">Select Members:</label>
+       <select v-model = "table.member_id" class="form-control">
+         <option></option>
+         <option v-for="m in MembList" v-bind:value = "m.member_id" >{{m.member_id}}</option>
+       </select>
+    </div>
+  </div>
+
+       <div class="col-6">
+         <div class="form-group">
+           <label>Certification Begin Date</label>
+           <input v-model= "table.date_granted" type="name" class="form-control" id="dategranted" placeholder="Enter Date Granted">
+         </div>
+         <br>
+       </div>
+       <div class="col-6">
+         <div class="form-group">
+           <label>Certification End Date</label>
+           <input v-model= "table.date_expired" type="name" class="form-control" id="dateexpired" placeholder="Enter Expiry Date">
+         </div>
+         <br>
+
+
+         <button v-on:click.prevent ="handleCert" type="submit" class="btn btn-primary">Confirm Selection</button>
+         </div>
+       </div>
+
+  </div>
+
+  </form>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/cert_assign.app.js"></script>
+
+
+</body>
+</html>
