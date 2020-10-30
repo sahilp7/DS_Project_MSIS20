@@ -74,3 +74,27 @@ VALUES (1,6,'2018-08-10','2020-08-10'),
 select * from members;
 select * from certifications;
 select * from member_certification;
+
+SELECT first_name, last_name, certification_name, date_expired
+FROM members, member_certification, certifications
+WHERE members.member_id = member_certification.member_id AND member_certification.certification_id = certifications.certification_id AND date_expired <= CURDATE();
+
+SELECT first_name, last_name, station, radio
+FROM members;
+
+SELECT member_id, first_name, last_name
+FROM members;
+
+SELECT first_name, last_name, certification_name, date_granted, date_expired
+FROM members, member_certification, certifications
+WHERE members.member_id = member_certification.member_id AND member_certification.certification_id = certifications.certification_id
+ORDER BY first_name;
+
+SELECT members.member_id, certification_name, date_granted, date_expired
+FROM members, member_certification, certifications
+WHERE members.member_id = member_certification.member_id AND member_certification.certification_id = certifications.certification_id
+AND members.member_id = 1;
+
+drop table members;
+drop table certifications;
+drop table member_certification;

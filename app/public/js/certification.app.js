@@ -11,7 +11,8 @@ certifApp = new Vue ({
       certification_id: '',
       certification_name: '',
       agency: '',
-      standard_expiry: ''
+      standard_expiry: '',
+      activeEdit: null
     }
   },
   methods: {
@@ -47,6 +48,19 @@ certifApp = new Vue ({
         agency: '',
         standard_expiry: ''
       }
+    },
+    fetchData:function(certification_id){
+      axios.post('edit_cert.php', {
+        action:'fetchSingle',
+        certification_id:certification_id
+      }).then(function(response){
+        application.certification_name = response.data.certification_name;
+        application.agency = response.data.agency;
+        application.standard_expiry = response.data.standard_expiry;
+        application.myModel = true;
+        application.actionButton = 'Update';
+        application.dynamicTitle = 'Edit Data';
+      });
     }
   },
   created() {

@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css\styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -23,90 +24,72 @@
     </div>
   </center>
   <br>
-  <div class="row">
-    <div class="column">
-      <div class="card">
-        <i class="fa fa-fire-extinguisher" aria-hidden="true"></i>
-        <h3>5+</h3>
-        <p>Fire Stations</p>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card">
-        <i class="fa fa-truck" aria-hidden="true"></i>
-        <h3>55+</h3>
-        <p>Responding to Emergencies</p>
-      </div>
-    </div>
 
-    <div class="column">
-      <div class="card">
-        <i class="fa fa-users" aria-hidden="true"></i>
-        <h3>100+</h3>
-        <p>Dedicated Firefighters</p>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <i class="fa fa-free-code-camp" aria-hidden="true"></i>
-        <h3>200+</h3>
-        <p>Promoting Fire Safety</p>
-      </div>
-    </div>
-  </div>
-
-  <section>
-    <img src="images\fire_rescue.jpg" alt="logo">
-  </section>
-  <button class="open-button" onclick="openForm()"><i class="fa fa-commenting-o"></i></button>
-  <div class="sticky">
+  <center>
+    <h2>List of Expired Certifications and Member Names</h2>
+    <b>Search the table for Certification:
+      <input id="gfg" type="text" placeholder="Search here">
+    </b>
     <br>
-    <h1 style="text-align:center">Meet The Team</h1>
-    <div class="row">
-      <div class="column">
-        <div class="card">
-          <img src="images\chinu.jpg" alt="Chinu" style="width:100%">
-          <div class="container">
-            <h2>Chinu Gerelt-Od</h2>
-            <p class="title">Data Analyst</p>
-            <p>cgerelto@iu.edu</p>
-          </div>
-        </div>
-      </div>
+    <div id="exp_certifs" class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Certification Name</th>
+            <th scope="col">Date Expired</th>
+          </tr>
+        </thead>
+        <tbody id="ExpCertTableBody">
+          <tr v-for="exp in ExpList">
+            <td>{{ exp.first_name }}</td>
+            <td>{{ exp.last_name }}</td>
+            <td>{{ exp.certification_name }}</td>
+            <td>{{ exp.date_expired }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><br>
 
-      <div class="column">
-        <div class="card">
-          <img src="images\john.jpg" alt="John" style="width:100%">
-          <div class="container">
-            <h2>John Krieger</h2>
-            <p class="title">Data Analyst</p>
-            <p>aarowall@iu.edu</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="column">
-        <div class="card">
-          <img src="images\zara.jpg" alt="Zara" style="width:100%">
-          <div class="container">
-            <h2>Zara Lakehal-Ayat</h2>
-            <p class="title">Developer</p>
-            <p>zlakehal@iu.edu</p>
-          </div>
-        </div>
-      </div>
-      <div class="column">
-        <div class="card">
-          <img src="images\sahil.jpg" alt="Zara" style="width:100%">
-          <div class="container">
-            <h2>Sahil Patel</h2>
-            <p class="title">Developer</p>
-            <p>sap7@iu.edu</p>
-          </div>
-        </div>
-      </div>
+    <h2>List of Members by Station, Radio, and Email Address</h2>
+    <div id="mem_rep" class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Station</th>
+            <th scope="col">Radio</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody id="MemTableBody">
+          <tr v-for="mem in MemList">
+            <td>{{ mem.first_name }}</td>
+            <td>{{ mem.last_name }}</td>
+            <td>{{ mem.station }}</td>
+            <td>{{ mem.radio }}</td>
+            <td>{{ mem.email_address }}
+          </tr>
+        </tbody>
+      </table>
     </div>
+
 </body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/exp_cert_rep.app.js"></script>
+<script src="js/members_rep.app.js"></script>
+<script>
+  $(document).ready(function() {
+    $("#gfg").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#ExpCertTableBody tr").filter(function() {
+        $(this).toggle($(this).text()
+          .toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+</script>
 
 </html>
