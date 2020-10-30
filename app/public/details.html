@@ -30,6 +30,7 @@
     </div>
   </center><br>
 
+  <h2>Member View</h2>
   <div id="detailView" class="container">
     <div v-for="(member,index) in groupedMembers">
       <h3>{{index}}</h3>
@@ -48,18 +49,28 @@
         </tbody>
       </table>
     </div>
-  </div>
+  </div><br>
 
+  <h2>Certification View</h2>
   <div id="certDetailView" class="container">
     <div v-for="(certification, index) in groupedCerts">
-      <h3>{{index}}</h3>
-      <ul>
-        <li v-for="member in certification">
-          {{member}}
-        </li>
-      </ul>
-    </div>
+    <h3>{{index}}</h3>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Member Name</th>
+          <th scope="col">Date Granted</th>
+          <th scope="col">Date Expired</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="member in certification">
+          <td>{{ member }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+</div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="js/mem_details.app.js"></script>
