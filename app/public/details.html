@@ -44,7 +44,7 @@
           </tr>
         </thead>
         <tbody id="detailView">
-          <tr v-for="exp in ExpList">
+          <tr v-for="(member,index) in groupedMembers">
             <td>{{ index }}</td>
             <td>{{ member[0] }}</td>
           </tr>
