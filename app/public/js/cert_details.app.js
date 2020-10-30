@@ -24,9 +24,13 @@ certDetailsApp = new Vue({
       this.CertDet.forEach((item) => {
         if (certifications[item.certification_name] == undefined) {
           certifications[item.certification_name] = [];
-          certifications[item.certification_name].push(item.Member_Name)
+          certifications[item.certification_name].push(item.Member_Name);
+          certifications[item.certification_name].push(item.date_granted);
+          certifications[item.certifsication_name].push(item.date_expired)
         } else {
           certifications[item.certification_name].push(item.Member_Name);
+          certifications[item.certification_name].push(item.date_granted);
+          certifications[item.certification_name].push(item.date_expired)s
         }
       });
       return certifications;
