@@ -26,11 +26,11 @@ certDetailsApp = new Vue({
           certifications[item.certification_name] = [];
           certifications[item.certification_name].push(item.Member_Name);
           certifications[item.certification_name].push(item.date_granted);
-          certifications[item.certifsication_name].push(item.date_expired)
+          certifications[item.certification_name].push(item.date_expired)
         } else {
           certifications[item.certification_name].push(item.Member_Name);
           certifications[item.certification_name].push(item.date_granted);
-          certifications[item.certification_name].push(item.date_expired)s
+          certifications[item.certification_name].push(item.date_expired)
         }
       });
       return certifications;
