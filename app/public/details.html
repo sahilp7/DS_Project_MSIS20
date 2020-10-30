@@ -41,8 +41,20 @@
     </div>
   </div>
 
+  <div id="certDetailView" class="container">
+    <div v-for="(certification, index) in groupedCerts">
+      <h3>{{index}}</h3>
+      <ul>
+        <li v-for="member in certification">
+          {{cert}}
+        </li>
+      </ul>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="js/mem_details.app.js"></script>
+  <script src="js/cert_details.app.js"></script>
 </body>
 
 </html>
