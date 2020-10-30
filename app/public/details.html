@@ -42,9 +42,9 @@
             <th scope="col">Date Expired</th>
           </tr>
         </thead>
-        <tbody id="detailView">
-          <tr v-for="(member,index) in groupedMembers">
-            <td>{{ member }}</td>
+        <tbody>
+          <tr v-for="cert in member">
+            <td>{{ cert }}</td>
           </tr>
         </tbody>
       </table>
