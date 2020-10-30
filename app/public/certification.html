@@ -40,7 +40,7 @@
         <td>{{ cert.standard_expiry }}</td>
       </tr>
     </table>
-  </div>
+
 
   <form v-on:submit.prevent="createCert">
     <div>
@@ -57,19 +57,20 @@
     </div>
   </form>
 
-    <form v-on:submit.prevent="deleteCert">
-      <div class="members">
-        <label for="certificationid">Certification Id:</label>
-        <input type="text" v-model="certId.certification_id" class="form-control" id="certId">
+  <form v-on:submit.prevent="deleteCert">
+    <div class="members">
+      <label for="certificationid">Certification Id:</label>
+      <input type="text" v-model="certId.certification_id" class="form-control" id="certId">
 
-      </div>
+    </div>
 
-      <div></br>
-        <input type="submit" value="Delete Certification" class="button">
-      </div>
-    </form>
+    <div></br>
+      <input type="submit" value="Delete Certification" class="button">
+    </div>
+  </form>
 
   </div>
+
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="js/certification.app.js"></script>
   <script src="js/edit_cert.app.js"></script>

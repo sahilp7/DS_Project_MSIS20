@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <center>
+    <h1> Add New Members</h1>
+  </center>
+  <center>
+    <div class="topnav">
+      <a href="homepage.html">Home</a>
+      <a href="about_ocr.html">About OCFR</a>
+      <a class="active" href="members.html">View Members</a>
+      <a href="certification.html">Certifications</a>
+      <a href="report.html">Report</a>
+    </div>
+  </center>
+
+  <br>
+
+  <div id="members">
+
+    <form v-on:submit.prevent="createMember">
+      <div class="members">
+        <label for="memberFName">First Name:</label>
+        <input type="text" v-model="newMember.first_name" class="form-control" id="memberFName">
+        <label for="memberLName">Last Name:</label>
+        <input type="text" v-model="newMember.last_name" class="form-control" id="memberLName">
+        <label for="isActive">Active Member?:</label>
+        <input type="text" v-model="newMember.is_active" class="form-control" id="isActive">
+        <label for="gender">Gender:</label>
+        <input type="text" v-model="newMember.gender" class="form-control" id="gender">
+        <label for="DoB">Date of Birth:</label>
+        <input type="date" v-model="newMember.date_of_birth" class="form-control" id="DoB">
+        <label for="mobile_number">Mobile Number:</label>
+        <input type="text" v-model="newMember.mobile_number" class="form-control" id="mobile_number">
+        <label for="work_number">Work Number:</label>
+        <input type="text" v-model="newMember.work_number" class="form-control" id="work_number">
+        <label for="street_address">Address 1:</label>
+        <input type="text" v-model="newMember.street_address" class="form-control" id="street_address">
+        <label for="city">City:</label>
+        <input type="text" v-model="newMember.city" class="form-control" id="city">
+        <label for="state">State:</label>
+        <input type="text" v-model="newMember.state" class="form-control" id="state">
+        <label for="zipCode">Zip Code:</label>
+        <input type="text" v-model="newMember.zip_code" class="form-control" id="zipCode">
+        <label for="email_address">Email:</label>
+        <input type="text" v-model="newMember.email_address" class="form-control" id="email_address">
+        <label for="station">Station:</label>
+        <input type="text" v-model="newMember.station" class="form-control" id="station">
+        <label for="chief">Chief?:</label>
+        <input type="text" v-model="newMember.chief" class="form-control" id="chief">
+        <label for="positionTitle">Position Title:</label>
+        <input type="text" v-model="newMember.position_title" class="form-control" id="positionTitle">
+        <label for="radio">Radio:</label>
+        <input type="text" v-model="newMember.radio" class="form-control" id="radio">
+      </div>
+
+      <div></br>
+        <input type="submit" value="Create Member" class="button">
+      </div>
+    </form>
+
+
+  </div>
+
+
+  </div>
+  <script src="js/member.app.js"></script>
+  <script src="js/editmember.app.js"></script>
+</body>
+
+</html>
