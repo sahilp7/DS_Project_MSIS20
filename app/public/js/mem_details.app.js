@@ -26,25 +26,15 @@ detailsApp = new Vue({
       this.MemDet.forEach((item) => {
         if (members[item.Member_Name] == undefined) {
           members[item.Member_Name] = [];
-          members[item.Member_Name].push(item.certification_name)
+          members[item.Member_Name].push(item.certification_name);
+          members[item.Member_Name].push(item.date_granted);
         } else {
           members[item.Member_Name].push(item.certification_name);
-        }
-      });
-      return members;
-    },
-    groupedDG() {
-      var date_g = {};
-      this.MemDet.forEach((item) => {
-        if (members[item.Member_Name] == undefined) {
-          members[item.Member_Name] = [];
-          members[item.Member_Name].push(item.date_granted)
-        } else {
           members[item.Member_Name].push(item.date_granted);
         }
       });
-      return date_g;
-  },
+      return members;
+    }},
   created() {
     this.fetchMemDet();
   }
