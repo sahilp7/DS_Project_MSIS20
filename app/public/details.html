@@ -31,9 +31,27 @@
   </center><br>
 
   <h2>Member View</h2>
-  <b>Search the table for Certification:
-    <input id="gfg" type="text" placeholder="Search here">
-  </b><hr>
+  <div id="detailView" class="container">
+    <div v-for="(member,index) in groupedMembers">
+      <h3>{{index}}</h3>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Certification Name</th>
+            <th scope="col">Date Granted</th>
+            <th scope="col">Date Expired</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="cert in member">
+            <td>{{ cert.certification_name }}</td>
+            <td>{{ cert.date_granted }}</td>
+            <td>{{ cert.date_expired }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div><br>
 
   <div id="detailView" class="table-responsive container">
     <table class="table table-bordered table-striped">
