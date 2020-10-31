@@ -18,7 +18,7 @@
 
 <body>
   <center>
-    <h1> Certification Assign Page</h1>
+    <h1> View Members</h1>
   </center>
   <center>
     <div class="topnav">
@@ -77,19 +77,31 @@
         </tr>
       </tbody>
     </table>
+    <center>
+    <br>
+    <div class=container1>
+      <h3> To add new members:</h3>
+      <button onclick="window.location.href='members_create.html';"> Add New Members </button>
+    </div>
+    </br>
 
-    <br><button type="button" class="btn btn-secondary" onclick="window.location.href='members_create.html';">
-      Add New Members
-    </button>
+    <div class=container1>
+      <h3> To edit members:</h3>
+      <button onclick="window.location.href='members_edit.html';">
+        Edit Members
+      </button>
+    </div>
 
-    <button type="button" class="btn btn-secondary" onclick="window.location.href='members_edit.html';">
-      Edit Members
-    </button>
+    </br>
 
-    <button type="button" class="btn btn-secondary" onclick="window.location.href='members_delete.html';">
-      Delete Members
-    </button></br>
+    <div class=container1>
+      <h3> To edit members:</h3>
+      <button onclick="window.location.href='members_delete.html';">
+        Delete Members
+      </button></br>
+    </div>
 
+    </center>
   </div>
 
   <script src="js/member.app.js"></script>

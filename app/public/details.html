@@ -18,7 +18,7 @@
 
 <body>
   <center>
-    <h1> Welcome Our Webpage!</h1>
+    <h1>View Details</h1>
   </center>
   <center>
     <div class="topnav">
@@ -53,33 +53,41 @@
     </div>
   </div><br>
 
-
-  <h2>Certification View</h2>
-  <div id="certDetailView" class="container">
-    <div v-for="(certification, index) in groupedCerts">
-    <h3>{{index}}</h3>
+  <div id="detailView" class="table-responsive container">
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
-          <th scope="col">Member Name</th>
-          <th scope="col">Date Granted</th>
-          <th scope="col">Date Expired</th>
+          <th>Member Name</th>
+          <th>Certification Name</th>
+          <th>Date Granted</th>
+          <th>Date Expired</th>
         </tr>
       </thead>
-      <tbody>
-        <tr v-for="member in CertDet">
-          <td>{{ member.Member_Name }}</td>
-          <td>{{ member.date_granted }}</td>
-          <td>{{ member.date_expired }}</td>
+      <tbody id="myTable">
+        <tr v-for="mem in MemDet">
+          <td>{{mem.Member_Name}}</td>
+          <td>{{mem.certification_name}}</td>
+          <td>{{mem.date_granted}}</td>
+          <td>{{mem.date_expired}}</td>
         </tr>
       </tbody>
     </table>
-  </div>
-</div>
+  </div><br>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="js/mem_details.app.js"></script>
   <script src="js/cert_details.app.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#gfg").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+          $(this).toggle($(this).text()
+            .toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
