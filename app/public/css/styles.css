@@ -202,11 +202,16 @@ div.sticky {
   background-color: #f1f1f1;
 }
 
-#button{
-    height:20px;
-    width:100px;
-    margin: -20px -50px;
-    position:relative;
-    top:50%;
-    left:50%;
+td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+.container1 {
+  border-radius: 5px;
+  background-color: #D3D3D3;
+  padding: 20px;
+  width: 50%;
+  justify-content: center !important;
+  margin: 0 auto;
 }
