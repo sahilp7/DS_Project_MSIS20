@@ -43,13 +43,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="cert in member">
-            <td>{{ cert }}</td>
+          <tr v-for="cert in MemDet">
+            <td>{{ cert.certification_name }}</td>
+            <td>{{ cert.date_granted }}</td>
+            <td>{{ cert.date_expired }}</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div><br>
+
 
   <h2>Certification View</h2>
   <div id="certDetailView" class="container">
@@ -64,8 +67,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="member in certification">
-          <td>{{ member }}</td>
+        <tr v-for="member in CertDet">
+          <td>{{ member.Member_Name }}</td>
+          <td>{{ member.date_granted }}</td>
+          <td>{{ member.date_expired }}</td>
         </tr>
       </tbody>
     </table>
