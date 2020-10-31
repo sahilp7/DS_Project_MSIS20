@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <center>
+    <h1> Edit Members</h1>
+  </center>
+  <center>
+    <div class="topnav">
+      <a href="homepage.html">Home</a>
+      <a href="about_ocr.html">About OCFR</a>
+      <a class="active" href="members.html">View Members</a>
+      <a href="certification.html">Certifications</a>
+      <a href="report.html">Report</a>
+    </div>
+  </center>
+
+  <br>
+
+  <div id="editmembersapp">
+    <div calss = "container">
+  <form>
+      <h2> Edit Member Records </h2>
+
+  <div class = "row">
+    <label for="member_id">Member Id</label>
+    <input type="text" class="form-control" id="editmember_id" v-model="Updatedmember.member_id" >
+    </div>
+
+      <div class="members">
+        <label for="editmemberFName">First Name:</label>
+        <input type="text" class="form-control" id="memberFName" v-model="Updatedmember.first_name" >
+        <label for="editmemberLName">Last Name:</label>
+        <input type="text"  class="form-control" id="memberLName" v-model="Updatedmember.last_name">
+        <label for="editisActive">Active Member?:</label>
+        <input type="text" class="form-control" id="isActive" v-model="Updatedmember.is_active" >
+        <label for="editgender">Gender:</label>
+        <input type="text" class="form-control" id="gender" v-model="Updatedmember.gender" >
+        <label for="editDoB">Date of Birth:</label>
+        <input type="date"class="form-control" id="DoB"  v-model="Updatedmember.date_of_birth" >
+        <label for="editmobile_number">Mobile Number:</label>
+        <input type="text" class="form-control" id="mobile_number" v-model="Updatedmember.mobile_number" >
+        <label for="editwork_number">Work Number:</label>
+        <input type="text" class="form-control" id="work_number" v-model="Updatedmember.work_number" >
+        <label for="editstreet_address">Address 1:</label>
+        <input type="text" class="form-control" id="street_address" v-model="Updatedmember.street_address" >
+        <label for="editcity">City:</label>
+        <input type="text" class="form-control" id="city" v-model="Updatedmember.city" >
+        <label for="editstate">State:</label>
+        <input type="text" class="form-control" id="state" v-model="Updatedmember.state" >
+        <label for="editzipCode">Zip Code:</label>
+        <input type="text" class="form-control" id="zipCode" v-model="Updatedmember.zip_code" >
+        <label for="editemail_address">Email:</label>
+        <input type="text" class="form-control" id="email_address" v-model="Updatedmember.email_address" >
+        <label for="editstation">Station:</label>
+        <input type="text" class="form-control" id="station" v-model="Updatedmember.station" >
+        <label for="editchief">Chief?:</label>
+        <input type="text" class="form-control" id="chief" v-model="Updatedmember.chief" >
+        <label for="editpositionTitle">Position Title:</label>
+        <input type="text" class="form-control" id="positionTitle" v-model="Updatedmember.position_title" >
+        <label for="editradio">Radio:</label>
+        <input type="text" class="form-control" id="radio" v-model="Updatedmember.radio">
+      </div>
+
+      <div></br>
+        <!-- <input type="submit" value="Edit Member" class="button"> -->
+        <button v-on:click.prevent ="editMember" type="submit" >Edit Member</button>
+      </div>
+
+    </form>
+
+   </div>
+  </div>
+  <script src="js/member.app.js"></script>
+  <script src="js/editmember.app.js"></script>
+</body>
+
+</html>

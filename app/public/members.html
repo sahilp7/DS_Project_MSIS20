@@ -32,27 +32,27 @@
 
   <br>
 
-  <div id="members">
-    <table>
+  <div id="members" class="table-responsive">
+    <table class="table table-bordered table-striped">
       <thead>
         <tr>
-          <th scope="col">Member ID<i class="fa fa-fw fa-sort"></i></th>
-          <th scope="col">First Name<i class="fa fa-fw fa-sort"></i></th>
-          <th scope="col">Last Name<i class="fa fa-fw fa-sort"></i></th>
-          <th scope="col">Is Active?<i class="fa fa-fw fa-sort"></i></th>
-          <th scope="col">Gender<i class="fa fa-fw fa-sort"></i></th>
-          <th scope="col">Date of Birth<i class="fa fa-fw fa-sort"></i></th>
-          <th scope="col">Mobile Number<i class="fa fa-fw fa-sort"></i></th>
-          <th scope="col">Work Number<i class="fa fa-fw fa-sort"></i></th>
-          <th scope="col">Street Address<i class="fa fa-fw fa-sort"></i></th>
-          <th scope="col">City<i class="fa fa-fw fa-sort"></i></th>
-          <th scope="col">State<i class="fa fa-fw fa-sort"></i></th>
-          <th scope="col">Zip Code<i class="fa fa-fw fa-sort"></i></th>
-          <th scope="col">Email Address<i class="fa fa-fw fa-sort"></i></th>
-          <th scope="col">Station<i class="fa fa-fw fa-sort"></i></th>
-          <th scope="col">Chief?<i class="fa fa-fw fa-sort"></i></th>
-          <th scope="col">Position<i class="fa fa-fw fa-sort"></i></th>
-          <th scope="col">Radio<i class="fa fa-fw fa-sort"></i></th>
+          <th scope="col">Member ID</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Is Active?</th>
+          <th scope="col">Gender</i></th>
+          <th scope="col">Date of Birth</th>
+          <th scope="col">Mobile Number</th>
+          <th scope="col">Work Number</th>
+          <th scope="col">Street Address</i></th>
+          <th scope="col">City</th>
+          <th scope="col">State</th>
+          <th scope="col">Zip Code</th>
+          <th scope="col">Email Address</th>
+          <th scope="col">Station</th>
+          <th scope="col">Chief?</th>
+          <th scope="col">Position</th>
+          <th scope="col">Radio</th>
         </tr>
       </thead>
       <tbody id="memberTableBody">
@@ -78,115 +78,20 @@
       </tbody>
     </table>
 
-    <form v-on:submit.prevent="createMember">
-      <div class="members">
-        <label for="memberFName">First Name:</label>
-        <input type="text" v-model="newMember.first_name" class="form-control" id="memberFName">
-        <label for="memberLName">Last Name:</label>
-        <input type="text" v-model="newMember.last_name" class="form-control" id="memberLName">
-        <label for="isActive">Active Member?:</label>
-        <input type="text" v-model="newMember.is_active" class="form-control" id="isActive">
-        <label for="gender">Gender:</label>
-        <input type="text" v-model="newMember.gender" class="form-control" id="gender">
-        <label for="DoB">Date of Birth:</label>
-        <input type="date" v-model="newMember.date_of_birth" class="form-control" id="DoB">
-        <label for="mobile_number">Mobile Number:</label>
-        <input type="text" v-model="newMember.mobile_number" class="form-control" id="mobile_number">
-        <label for="work_number">Work Number:</label>
-        <input type="text" v-model="newMember.work_number" class="form-control" id="work_number">
-        <label for="street_address">Address 1:</label>
-        <input type="text" v-model="newMember.street_address" class="form-control" id="street_address">
-        <label for="city">City:</label>
-        <input type="text" v-model="newMember.city" class="form-control" id="city">
-        <label for="state">State:</label>
-        <input type="text" v-model="newMember.state" class="form-control" id="state">
-        <label for="zipCode">Zip Code:</label>
-        <input type="text" v-model="newMember.zip_code" class="form-control" id="zipCode">
-        <label for="email_address">Email:</label>
-        <input type="text" v-model="newMember.email_address" class="form-control" id="email_address">
-        <label for="station">Station:</label>
-        <input type="text" v-model="newMember.station" class="form-control" id="station">
-        <label for="chief">Chief?:</label>
-        <input type="text" v-model="newMember.chief" class="form-control" id="chief">
-        <label for="positionTitle">Position Title:</label>
-        <input type="text" v-model="newMember.position_title" class="form-control" id="positionTitle">
-        <label for="radio">Radio:</label>
-        <input type="text" v-model="newMember.radio" class="form-control" id="radio">
-      </div>
+    <br><button onclick="window.location.href='members_create.html';">
+      Add New Members
+    </button></br>
 
-      <div></br>
-        <input type="submit" value="Create Member" class="button">
-      </div>
-    </form>
+    <br><button onclick="window.location.href='members_edit.html';">
+      Edit Members
+    </button></br>
 
-    <form v-on:submit.prevent="deleteMember">
-      <div class="members">
-        <label for="memberid">Member Id:</label>
-        <input type="text" v-model="memberId.member_id" class="form-control" id="memberID">
-
-      </div>
-
-      <div></br>
-        <input type="submit" value="Delete Member" class="button">
-      </div>
-    </form>
+    <br><button onclick="window.location.href='members_delete.html';">
+      Delete Members
+    </button></br>
 
   </div>
 
-  <div id="editmembersapp">
-    <div calss = "container">
-  <form>
-      <h2> Edit Member Records </h2>
-
-  <div class = "row">
-    <label for="member_id">Member Id</label>
-    <input type="text" class="form-control" id="editmember_id" v-model="Updatedmember.member_id" >
-    </div>
-
-      <div class="members">
-        <label for="editmemberFName">First Name:</label>
-        <input type="text" class="form-control" id="memberFName" v-model="Updatedmember.first_name" >
-        <label for="editmemberLName">Last Name:</label>
-        <input type="text"  class="form-control" id="memberLName" v-model="Updatedmember.last_name">
-        <label for="editisActive">Active Member?:</label>
-        <input type="text" class="form-control" id="isActive" v-model="Updatedmember.is_active" >
-        <label for="editgender">Gender:</label>
-        <input type="text" class="form-control" id="gender" v-model="Updatedmember.gender" >
-        <label for="editDoB">Date of Birth:</label>
-        <input type="date"class="form-control" id="DoB"  v-model="Updatedmember.date_of_birth" >
-        <label for="editmobile_number">Mobile Number:</label>
-        <input type="text" class="form-control" id="mobile_number" v-model="Updatedmember.mobile_number" >
-        <label for="editwork_number">Work Number:</label>
-        <input type="text" class="form-control" id="work_number" v-model="Updatedmember.work_number" >
-        <label for="editstreet_address">Address 1:</label>
-        <input type="text" class="form-control" id="street_address" v-model="Updatedmember.street_address" >
-        <label for="editcity">City:</label>
-        <input type="text" class="form-control" id="city" v-model="Updatedmember.city" >
-        <label for="editstate">State:</label>
-        <input type="text" class="form-control" id="state" v-model="Updatedmember.state" >
-        <label for="editzipCode">Zip Code:</label>
-        <input type="text" class="form-control" id="zipCode" v-model="Updatedmember.zip_code" >
-        <label for="editemail_address">Email:</label>
-        <input type="text" class="form-control" id="email_address" v-model="Updatedmember.email_address" >
-        <label for="editstation">Station:</label>
-        <input type="text" class="form-control" id="station" v-model="Updatedmember.station" >
-        <label for="editchief">Chief?:</label>
-        <input type="text" class="form-control" id="chief" v-model="Updatedmember.chief" >
-        <label for="editpositionTitle">Position Title:</label>
-        <input type="text" class="form-control" id="positionTitle" v-model="Updatedmember.position_title" >
-        <label for="editradio">Radio:</label>
-        <input type="text" class="form-control" id="radio" v-model="Updatedmember.radio">
-      </div>
-
-      <div></br>
-        <!-- <input type="submit" value="Edit Member" class="button"> -->
-        <button v-on:click.prevent ="editMember" type="submit" >Edit Member</button>
-      </div>
-
-    </form>
-
-   </div>
-  </div>
   <script src="js/member.app.js"></script>
   <script src="js/editmember.app.js"></script>
 </body>

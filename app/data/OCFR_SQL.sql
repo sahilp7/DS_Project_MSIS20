@@ -95,6 +95,11 @@ FROM members, member_certification, certifications
 WHERE members.member_id = member_certification.member_id AND member_certification.certification_id = certifications.certification_id
 AND members.member_id = 1;
 
+SELECT certification_name, first_name, last_name, date_granted, date_expired
+FROM members, member_certification, certifications
+WHERE members.member_id = member_certification.member_id AND member_certification.certification_id = certifications.certification_id
+ORDER BY certification_name;
+
 drop table members;
 drop table certifications;
 drop table member_certification;
