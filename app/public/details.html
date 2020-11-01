@@ -33,13 +33,14 @@
   <h2>Member View</h2>
   <b>Search the table for Certification:
     <input id="gfg" type="text" placeholder="Search here">
+      <input type="text" id="brandFilter" onkeyup="filterTable()" placeholder="Filter">
   </b>
   <hr>
   <div id="detailView" class="table-responsive container">
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
-          <th scope="col">Member Name</th>
+          <th id="name" scope="col">Member Name</th>
           <th scope="col">Certification Name</th>
           <th scope="col">Date Granted</th>
           <th scope="col">Date Expired</th>
@@ -69,6 +70,27 @@
         });
       });
     });
+  </script>
+
+  <script>
+  function filterTable() {
+var input, filter, table, tr, td, i, txtValue;
+input = document.getElementById("brandFilter");
+filter = input.value.toUpperCase();
+table = document.getElementById("name");
+tr = table.getElementsByTagName("tr");
+for (i = 0; i < tr.length; i++) {
+  td = tr[i].getElementsByTagName("td")[0];
+  if (td) {
+    txtValue = td.textContent || td.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      tr[i].style.display = "";
+    } else {
+      tr[i].style.display = "none";
+    }
+  }
+}
+}
   </script>
 
 </body>
