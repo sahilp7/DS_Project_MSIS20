@@ -40,26 +40,10 @@
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
-          <th id="name" scope="col">Member Name
-            <div class="input">
-             <input type="text" placeholder="Filter">
-           </div>
-         </th>
-          <th scope="col">Certification Name
-            <div class="input">
-             <input type="text" placeholder="Filter">
-           </div>
-         </th>
-          <th scope="col">Date Granted
-            <div class="input">
-            <input type="text" placeholder="Filter">
-          </div>
-        </th>
-          <th scope="col">Date Expired
-            <div class="input">
-             <input type="text" placeholder="Filter">
-           </div>
-         </th>
+          <th scope="col">Member Name</th>
+          <th scope="col">Certification Name</th>
+          <th scope="col">Date Granted</th>
+          <th scope="col">Date Expired</th>
         </tr>
       </thead>
       <tbody id="table">
@@ -86,27 +70,6 @@
         });
       });
     });
-  </script>
-
-  <script>
-  function filterTable() {
-var input, filter, table, tr, td, i, txtValue;
-input = document.getElementById("brandFilter");
-filter = input.value.toUpperCase();
-table = document.getElementById("name");
-tr = table.getElementsByTagName("tr");
-for (i = 0; i < tr.length; i++) {
-  td = tr[i].getElementsByTagName("td")[0];
-  if (td) {
-    txtValue = td.textContent || td.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      tr[i].style.display = "";
-    } else {
-      tr[i].style.display = "none";
-    }
-  }
-}
-}
   </script>
 
 </body>
