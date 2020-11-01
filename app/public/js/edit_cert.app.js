@@ -5,7 +5,7 @@ editcertapp = new Vue ({
   },
   methods: {
     editCert(evt){
-      fetch('api/records/certification_edit.php', {
+      fetch('api/certifications/cert_edit.php', {
           method: 'POST',
           body: JSON.stringify(this.Updatedcert),
           headers: {

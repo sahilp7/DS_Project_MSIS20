@@ -43,7 +43,7 @@ membersApp = new Vue ({
   },
   methods: {
     fetchMember(){
-      fetch('api/records/members.php')
+      fetch('api/members/members.php')
         .then(response => response.json())
         .then(json => {
           this.MembList = json;
@@ -51,7 +51,7 @@ membersApp = new Vue ({
         });
     },
     createMember(){
-      fetch('api/records/member_insert.php', {
+      fetch('api/members/member_insert.php', {
           method: 'POST',
           body: JSON.stringify(this.newMember),
           headers: {
@@ -79,7 +79,7 @@ membersApp = new Vue ({
 
     deleteMember(evt){
       console.log(this.memberId)
-      fetch('api/records/member_delete.php', {
+      fetch('api/members/member_delete.php', {
           method: 'POST',
           body: JSON.stringify(this.memberId),
           headers: {

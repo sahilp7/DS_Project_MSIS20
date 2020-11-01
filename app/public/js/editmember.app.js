@@ -5,7 +5,7 @@ editmembersapp = new Vue ({
   },
   methods: {
     editMember(evt){
-      fetch('api/records/member_edit.php', {
+      fetch('api/members/member_edit.php', {
           method: 'POST',
           body: JSON.stringify(this.Updatedmember),
           headers: {

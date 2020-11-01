@@ -8,20 +8,20 @@ var assigncertapp = new Vue({
   },
   methods: {
     fetchMemb() {
-      fetch('api/records/members_assign.php')
+      fetch('api/member_certifications/members_assign.php')
       .then(response => response.json())
       .then(json => {assigncertapp.MembList = json})
     },
 
     fetchcert() {
-      fetch('api/records/cert_assign.php')
+      fetch('api/member_certifications/cert_assign.php')
       .then(response => response.json())
       .then(json => {assigncertapp.certifications = json})
     },
 
     handleCert(){
       console.log(this.table)
-      fetch('api/records/membercert_assign.php', {
+      fetch('api/member_certifications/member_cert_assign.php', {
         method:'POST',
         body: JSON.stringify(this.table),
         headers: {

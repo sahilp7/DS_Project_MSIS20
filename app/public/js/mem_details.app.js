@@ -10,7 +10,7 @@ detailsApp = new Vue({
   },
   methods: {
     fetchMemDet() {
-      fetch('api/records/member_details.php')
+      fetch('api/member_certifications/member_details.php')
         .then(response => response.json())
         .then(json => {
           this.MemDet = json;
