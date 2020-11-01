@@ -31,44 +31,26 @@
   </center><br>
 
   <h2>Member View</h2>
-  <div id="detailView" class="container">
-    <div v-for="(member,index) in groupedMembers">
-      <h3>{{index}}</h3>
-      <table class="table table-bordered table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Certification Name</th>
-            <th scope="col">Date Granted</th>
-            <th scope="col">Date Expired</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="cert in member">
-            <td>{{ cert.certification_name }}</td>
-            <td>{{ cert.date_granted }}</td>
-            <td>{{ cert.date_expired }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div><br>
-
+  <b>Search the table for Certification:
+    <input id="gfg" type="text" placeholder="Search here">
+  </b>
+  <hr>
   <div id="detailView" class="table-responsive container">
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
-          <th>Member Name</th>
-          <th>Certification Name</th>
-          <th>Date Granted</th>
-          <th>Date Expired</th>
+          <th scope="col">Member Name</th>
+          <th scope="col">Certification Name</th>
+          <th scope="col">Date Granted</th>
+          <th scope="col">Date Expired</th>
         </tr>
       </thead>
-      <tbody id="myTable">
-        <tr v-for="mem in MemDet">
-          <td>{{mem.Member_Name}}</td>
-          <td>{{mem.certification_name}}</td>
-          <td>{{mem.date_granted}}</td>
-          <td>{{mem.date_expired}}</td>
+      <tbody id="table">
+        <tr v-for="det in MemDet">
+          <td>{{ det.Member_Name }}</td>
+          <td>{{ det.certification_name }}</td>
+          <td>{{ det.date_granted }}</td>
+          <td>{{ det.date_expired }}</td>
         </tr>
       </tbody>
     </table>
@@ -81,13 +63,14 @@
     $(document).ready(function() {
       $("#gfg").on("keyup", function() {
         var value = $(this).val().toLowerCase();
-        $("#myTable tr").filter(function() {
+        $("#table tr").filter(function() {
           $(this).toggle($(this).text()
             .toLowerCase().indexOf(value) > -1)
         });
       });
     });
   </script>
+
 </body>
 
 </html>
