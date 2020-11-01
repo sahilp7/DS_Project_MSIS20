@@ -17,7 +17,7 @@ certifApp = new Vue ({
   },
   methods: {
     fetchCert(){
-      fetch('api/records/certifications.php')
+      fetch('api/certifications/certifications.php')
         .then(response => response.json())
         .then(json => {
           this.CertList = json;
@@ -25,7 +25,7 @@ certifApp = new Vue ({
         });
     },
     createCert(){
-      fetch('api/records/certification_insert.php', {
+      fetch('api/certifications/cert_insert.php', {
           method: 'POST',
           body: JSON.stringify(this.newCert),
           headers: {
@@ -44,7 +44,7 @@ certifApp = new Vue ({
 
     deleteCert(evt){
       console.log(this.certId)
-      fetch('api/records/cert_delete.php', {
+      fetch('api/certifications/cert_delete.php', {
           method: 'POST',
           body: JSON.stringify(this.certId),
           headers: {

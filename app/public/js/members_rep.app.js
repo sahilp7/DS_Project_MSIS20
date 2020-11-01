@@ -11,7 +11,7 @@ memRepApp = new Vue ({
   },
   methods: {
     fetchMember(){
-      fetch('api/records/members_report.php')
+      fetch('api/members/members_report.php')
         .then(response => response.json())
         .then(json => {
           this.MemList = json;

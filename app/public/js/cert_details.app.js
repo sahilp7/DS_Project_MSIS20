@@ -10,7 +10,7 @@ certDetailsApp = new Vue({
   },
   methods: {
     fetchCertDet() {
-      fetch('api/records/cert_details.php')
+      fetch('api/certifications/cert_details.php')
         .then(response => response.json())
         .then(json => {
           this.CertDet = json;
