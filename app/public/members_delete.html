@@ -34,17 +34,23 @@
 
   <div id="members">
     <div calss = "container">
+      <center>
       <form v-on:submit.prevent="deleteMember">
-        <div class="members">
-          <label for="memberid">Member Id:</label>
-          <input type="text" v-model="memberId.member_id" class="form-control" id="memberID">
+        <div class=container1>
+            <div class="members">
+              <h3> To Delete a Member: </h3>
+              <label for="memberid">Member Id:</label>
+              <input type="text" v-model="memberId.member_id" class="form-control" id="memberID">
 
-        </div>
+            </div>
+
 
         <div></br>
           <input type="submit" value="Delete Member" class="button">
         </div>
+        <div>
       </form>
+    </center>
 
    </div>
   </div>

@@ -33,58 +33,60 @@
   <br>
 
   <div id="editmembersapp">
-    <div calss = "container">
-  <form>
-      <h2> Edit Member Records </h2>
+  <div class = "container1">
+      <div calss = "container">
+    <form>
+        <h2> Edit Member Records </h2>
 
-  <div class = "row">
-    <label for="member_id">Member Id</label>
-    <input type="text" class="form-control" id="editmember_id" v-model="Updatedmember.member_id" >
-    </div>
-
-      <div class="members">
-        <label for="editmemberFName">First Name:</label>
-        <input type="text" class="form-control" id="memberFName" v-model="Updatedmember.first_name" >
-        <label for="editmemberLName">Last Name:</label>
-        <input type="text"  class="form-control" id="memberLName" v-model="Updatedmember.last_name">
-        <label for="editisActive">Active Member?:</label>
-        <input type="text" class="form-control" id="isActive" v-model="Updatedmember.is_active" >
-        <label for="editgender">Gender:</label>
-        <input type="text" class="form-control" id="gender" v-model="Updatedmember.gender" >
-        <label for="editDoB">Date of Birth:</label>
-        <input type="date"class="form-control" id="DoB"  v-model="Updatedmember.date_of_birth" >
-        <label for="editmobile_number">Mobile Number:</label>
-        <input type="text" class="form-control" id="mobile_number" v-model="Updatedmember.mobile_number" >
-        <label for="editwork_number">Work Number:</label>
-        <input type="text" class="form-control" id="work_number" v-model="Updatedmember.work_number" >
-        <label for="editstreet_address">Address 1:</label>
-        <input type="text" class="form-control" id="street_address" v-model="Updatedmember.street_address" >
-        <label for="editcity">City:</label>
-        <input type="text" class="form-control" id="city" v-model="Updatedmember.city" >
-        <label for="editstate">State:</label>
-        <input type="text" class="form-control" id="state" v-model="Updatedmember.state" >
-        <label for="editzipCode">Zip Code:</label>
-        <input type="text" class="form-control" id="zipCode" v-model="Updatedmember.zip_code" >
-        <label for="editemail_address">Email:</label>
-        <input type="text" class="form-control" id="email_address" v-model="Updatedmember.email_address" >
-        <label for="editstation">Station:</label>
-        <input type="text" class="form-control" id="station" v-model="Updatedmember.station" >
-        <label for="editchief">Chief?:</label>
-        <input type="text" class="form-control" id="chief" v-model="Updatedmember.chief" >
-        <label for="editpositionTitle">Position Title:</label>
-        <input type="text" class="form-control" id="positionTitle" v-model="Updatedmember.position_title" >
-        <label for="editradio">Radio:</label>
-        <input type="text" class="form-control" id="radio" v-model="Updatedmember.radio">
+    <div class = "row">
+      <label for="member_id">Member Id</label>
+      <input type="text" class="form-control" id="editmember_id" v-model="Updatedmember.member_id" >
       </div>
 
-      <div></br>
-        <!-- <input type="submit" value="Edit Member" class="button"> -->
-        <button v-on:click.prevent ="editMember" type="submit" >Edit Member</button>
-      </div>
+        <div class="members">
+          <label for="editmemberFName">First Name:</label>
+          <input type="text" class="form-control" id="memberFName" v-model="Updatedmember.first_name" >
+          <label for="editmemberLName">Last Name:</label>
+          <input type="text"  class="form-control" id="memberLName" v-model="Updatedmember.last_name">
+          <label for="editisActive">Active Member?:</label>
+          <input type="text" class="form-control" id="isActive" v-model="Updatedmember.is_active" >
+          <label for="editgender">Gender:</label>
+          <input type="text" class="form-control" id="gender" v-model="Updatedmember.gender" >
+          <label for="editDoB">Date of Birth:</label>
+          <input type="date"class="form-control" id="DoB"  v-model="Updatedmember.date_of_birth" >
+          <label for="editmobile_number">Mobile Number:</label>
+          <input type="text" class="form-control" id="mobile_number" v-model="Updatedmember.mobile_number" >
+          <label for="editwork_number">Work Number:</label>
+          <input type="text" class="form-control" id="work_number" v-model="Updatedmember.work_number" >
+          <label for="editstreet_address">Address 1:</label>
+          <input type="text" class="form-control" id="street_address" v-model="Updatedmember.street_address" >
+          <label for="editcity">City:</label>
+          <input type="text" class="form-control" id="city" v-model="Updatedmember.city" >
+          <label for="editstate">State:</label>
+          <input type="text" class="form-control" id="state" v-model="Updatedmember.state" >
+          <label for="editzipCode">Zip Code:</label>
+          <input type="text" class="form-control" id="zipCode" v-model="Updatedmember.zip_code" >
+          <label for="editemail_address">Email:</label>
+          <input type="text" class="form-control" id="email_address" v-model="Updatedmember.email_address" >
+          <label for="editstation">Station:</label>
+          <input type="text" class="form-control" id="station" v-model="Updatedmember.station" >
+          <label for="editchief">Chief?:</label>
+          <input type="text" class="form-control" id="chief" v-model="Updatedmember.chief" >
+          <label for="editpositionTitle">Position Title:</label>
+          <input type="text" class="form-control" id="positionTitle" v-model="Updatedmember.position_title" >
+          <label for="editradio">Radio:</label>
+          <input type="text" class="form-control" id="radio" v-model="Updatedmember.radio">
+        </div>
+
+        <div></br>
+          <!-- <input type="submit" value="Edit Member" class="button"> -->
+          <button v-on:click.prevent ="editMember" type="submit" >Edit Member</button>
+        </div>
 
     </form>
 
    </div>
+   <div>
   </div>
   <script src="js/member.app.js"></script>
   <script src="js/editmember.app.js"></script>
