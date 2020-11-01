@@ -2,7 +2,9 @@ detailsApp = new Vue({
   el: '#detailView',
   data: {
     MemDet: [{
+      member_id: '',
       Member_Name: '',
+      certification_id: '',
       certification_name: '',
       date_granted: '',
       date_expired: ''

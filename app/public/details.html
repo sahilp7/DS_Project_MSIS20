@@ -45,6 +45,8 @@
       <thead>
         <tr>
           <th scope="col">Member Name</th>
+          <th scope="col">Member Name</th>
+          <th scope="col">Certification ID</th>
           <th scope="col">Certification Name</th>
           <th scope="col">Date Granted</th>
           <th scope="col">Date Expired</th>
@@ -52,7 +54,9 @@
       </thead>
       <tbody id="table">
         <tr v-for="det in MemDet">
+          <td>{{ det.member_id }}</td>
           <td>{{ det.Member_Name }}</td>
+          <td>{{ det.certification_id }}</td>
           <td>{{ det.certification_name }}</td>
           <td>{{ det.date_granted }}</td>
           <td>{{ det.date_expired }}</td>
