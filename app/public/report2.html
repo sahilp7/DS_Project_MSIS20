@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="css\styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -15,14 +17,42 @@
     <h1> Member Reports </h1>
   </center>
   <center>
-    <div class="topnav">
-      <a href="homepage.html">Home</a>
-      <a href="about_ocr.html">About OCFR</a>
-      <a href="members.html">View Members</a>
-      <a href="certification.html">Certifications</a>
-      <a href="details.html">Detailed View</a>
-      <a class="active" href="report.html">Report</a>
-    </div>
+
+    <nav class="row navbar navbar-default" >
+
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#mymenu">
+
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+
+            </button>
+
+        <div class="collapse navbar-collapse" id="mymenu">
+
+        <ul class="nav navbar-nav">
+
+       <li> <a href="homepage.html">Home</a></li>
+        <li><a href="about_ocr.html">About OCFR</a></li>
+        <li><a href="members.html">View Members</a></li>
+        <li><a href="certification.html">Certifications</a></li>
+        <li class="dropdown">
+            <a href="details.html" class="dropdown-toggle" data-toggle="dropdown">
+                Reports<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="active" href="report2.html">Member Report</a></li>
+                <li><a href="report.html">Certification Report</a></li>
+            </ul>
+            </li>
+
+        </ul>
+        </div>
+        </div>
+
+     </nav>
+
   </center>
   <br>
 
