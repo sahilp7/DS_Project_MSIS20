@@ -8,52 +8,13 @@
   <link rel="stylesheet" href="css\styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
   <center>
     <h1> Member Reports </h1>
   </center>
-  <center>
 
-    <nav class="row navbar navbar-default" >
-
-        <div class="navbar-header">
-            <button class="navbar-toggle" data-toggle="collapse" data-target="#mymenu">
-
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-
-            </button>
-
-        <div class="collapse navbar-collapse" id="mymenu">
-
-        <ul class="nav navbar-nav">
-
-       <li> <a href="homepage.html">Home</a></li>
-        <li><a href="members.html">View Members</a></li>
-        <li><a href="certification.html">Certifications</a></li>
-        <li><a href="details.html">Detailed View</a></li>
-        <li class="dropdown">
-            <a href="details.html" class="dropdown-toggle" data-toggle="dropdown">
-                Reports<span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a class="active" href="report2.html">Member Report</a></li>
-                <li><a href="report.html">Certification Report</a></li>
-            </ul>
-            </li>
-
-        </ul>
-        </div>
-        </div>
-
-     </nav>
-
-  </center>
   <br>
 
   <center>
@@ -85,6 +46,11 @@
         </tbody>
       </table>
       <button onclick="export_mem_csv(report2.html,Member_Report)" class="btn btn-primary">Download Member Report</button>
+      <hr>
+
+      <div class=container1>
+        <h3> Go Back to Detail View</h3> <button onclick="window.location.href='details.html';">Detail View</button>
+      </div>
     </div>
 
 </body>
