@@ -2,19 +2,6 @@
 <html lang="en">
 
 <head>
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css\styles.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css\styles.css">
@@ -25,49 +12,34 @@
 
 <body>
   <center>
-    <h1>View Details</h1>
+    <h1>Detailed View and Generate Reports</h1>
   </center>
   <center>
-
-    <nav class="row navbar navbar-default" >
-
-        <div class="navbar-header">
-            <button class="navbar-toggle" data-toggle="collapse" data-target="#mymenu">
-
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-
-            </button>
-
+    <nav class="row navbar navbar-default">
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target="#mymenu">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
         <div class="collapse navbar-collapse" id="mymenu">
-
-        <ul class="nav navbar-nav">
-
-       <li> <a href="homepage.html">Home</a></li>
-        <li><a href="members.html">View Members</a></li>
-        <li><a href="certification.html">Certifications</a></li>
-        <li><a class="active" href="details.html">Detailed View & Reports</a></li>
-
-
-        </ul>
+          <ul class="nav navbar-nav">
+            <li> <a href="homepage.html">Home</a></li>
+            <li><a href="members.html">View Members</a></li>
+            <li><a href="certification.html">Certifications</a></li>
+            <li><a class="active" href="details.html">Detailed View & Reports</a></li>
+          </ul>
         </div>
-        </div>
-
-     </nav>
-
+      </div>
+    </nav>
   </center>
   <br>
-
-  <h2>Member View</h2>
   <center>
-  <b>Search the table for Certification and Member:
-    <input id="gfg" type="text" placeholder="Search here">
-  </b>
-</center>
+    <b>Search the table for Certification and Member:
+      <input id="gfg" type="text" placeholder="Search here">
+    </b>
+  </center>
   <br><br>
-
-  <!-- <hr> -->
   <div id="detailView" class="table-responsive">
     <table class="table table-bordered table-striped">
       <thead>
@@ -92,16 +64,15 @@
       </tbody>
     </table>
   </div><br>
-
+  <center>
   <div class=container1>
     <h3> Certification Report:</h3> <button onclick="window.location.href='report.html';"> Go to the Report </button>
   </div>
   <br>
-
   <div class=container1>
     <h3> Member Report:</h3> <button onclick="window.location.href='report2.html';"> Go to the Report </button>
   </div>
-
+</center><br>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="js/mem_details.app.js"></script>
   <script src="js/cert_details.app.js"></script>
