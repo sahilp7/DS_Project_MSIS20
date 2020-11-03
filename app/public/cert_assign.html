@@ -46,7 +46,7 @@
       </div>
       <div class="col-sm-6">
         <div class="form-group">
-          <label for="member">Select Members:</label>
+          <label for="member">Select Member:</label>
           <select v-model="table.member_id" class="form-control">
             <option></option>
             <option v-for="m in MembList" v-bind:value="m.member_id">{{m.member_id}}</option>
@@ -55,13 +55,13 @@
       </div>
       <div class="col-6">
         <div class="form-group">
-          <label>Certification Begin Date</label>
+          <label>Certification Begin Date:</label>
           <input v-model="table.date_granted" type="name" class="form-control" id="dategranted" placeholder="Enter Date Granted">
         </div>
       </div>
       <div class="col-6">
         <div class="form-group">
-          <label>Certification End Date</label>
+          <label>Certification End Date:</label>
           <input v-model="table.date_expired" type="name" class="form-control" id="dateexpired" placeholder="Enter Expiry Date">
         </div>
         <br>
