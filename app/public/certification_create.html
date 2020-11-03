@@ -34,49 +34,36 @@
   </center>
   <br>
   <div id="certifs" class="table-responsive">
-    <table class="table table-bordered table-striped">
-      <tr>
-        <th>Certification ID</th>
-        <th>Certification Name</th>
-        <th>Agency</th>
-        <th>Standard Expiry</th>
-      </tr>
-      <tr v-for="cert in CertList">
-        <td>{{ cert.certification_id }}</td>
-        <td>{{ cert.certification_name }}</td>
-        <td>{{ cert.agency }}</td>
-        <td>{{ cert.standard_expiry }}</td>
-      </tr>
-    </table>
-</div>
 
-<div>
-    <center>
-      <br>
+    <form v-on:submit.prevent="createCert">
       <div class=container1>
-        <h3> To add new certification:</h3>
-        <button onclick="window.location.href='certification_create.html';"> Add New Certification </button>
-      </div>
-      <br>
-      <div class=container1>
-        <h3> To edit certification:</h3>
-        <button onclick="window.location.href='cert_edit.html';">
-          Edit Certification
-        </button>
-      </div>
-      </br>
-      <div class=container1>
-        <h3> To delete certification:</h3>
-        <button onclick="window.location.href='certification_delete.html';">
-          Delete Certification
-        </button></br>
-      </div>
-      </br>
-
-    </center>
-</div>
+        <div>
+          <label for="certName">Certification Name:</label>
+          <input type="text" v-model="newCert.certification_name" class="form-control" id="certName">
+          <br>
+          <label for="agency">Agency:</label>
+          <input type="text" v-model="newCert.agency" class="form-control" id="agency">
+          <br>
+          <label for="std">Standard Expiry:</label>
+          <input type="text" v-model="newCert.standard_expiry" class="form-control" id="std">
+          <br>
+        </div>
+        <div>
+          <center>
+            <input type="submit" value="Create Certification" class="button">
+          </center>
+        </div>
+    </form>
 
 
+  </div><br>
+  <center>
+  <button onclick="window.location.href='certification.html';">
+    Go back to certification page
+  </button></br>
+</center>
+
+  </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

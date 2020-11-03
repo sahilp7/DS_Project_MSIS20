@@ -11,7 +11,7 @@
 
 <body>
   <center>
-    <h1>Certifications</h1>
+    <h1>Delete Certifications</h1>
   </center>
   <center>
     <nav class="row navbar navbar-default">
@@ -34,47 +34,31 @@
   </center>
   <br>
   <div id="certifs" class="table-responsive">
-    <table class="table table-bordered table-striped">
-      <tr>
-        <th>Certification ID</th>
-        <th>Certification Name</th>
-        <th>Agency</th>
-        <th>Standard Expiry</th>
-      </tr>
-      <tr v-for="cert in CertList">
-        <td>{{ cert.certification_id }}</td>
-        <td>{{ cert.certification_name }}</td>
-        <td>{{ cert.agency }}</td>
-        <td>{{ cert.standard_expiry }}</td>
-      </tr>
-    </table>
-</div>
+    <div class=container1>
+
+
+    <form v-on:submit.prevent="deleteCert">
+      <div class="members">
+        <label for="certificationid">Certification ID:</label>
+        <input type="text" v-model="certId.certification_id" class="form-control" id="certId">
+      </div>
+      <center>
+        <div></br>
+          <input type="submit" value="Delete Certification" class="button">
+        </div>
+      </center>
+    </form>
+    </div><br>
+  </div>
 
 <div>
     <center>
-      <br>
-      <div class=container1>
-        <h3> To add new certification:</h3>
-        <button onclick="window.location.href='certification_create.html';"> Add New Certification </button>
-      </div>
-      <br>
-      <div class=container1>
-        <h3> To edit certification:</h3>
-        <button onclick="window.location.href='cert_edit.html';">
-          Edit Certification
-        </button>
-      </div>
-      </br>
-      <div class=container1>
-        <h3> To delete certification:</h3>
-        <button onclick="window.location.href='certification_delete.html';">
-          Delete Certification
-        </button></br>
-      </div>
-      </br>
-
-    </center>
+    <button onclick="window.location.href='certification.html';">
+      Go back to certification page
+    </button></br>
+   </center>
 </div>
+
 
 
 </body>
